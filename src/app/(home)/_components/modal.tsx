@@ -1,12 +1,8 @@
-import { useRouter } from "next/navigation";
+type Props = {
+  toggleModal: () => void;
+};
 
-export default function Modal() {
-  const router = useRouter();
-
-  const handleModelClose = () => {
-    router.push("/");
-  };
-
+export default function Modal({ toggleModal }: Props) {
   return (
     <div
       className="fixed inset-0 z-50 flex items-center justify-center backdrop-blur-sm"
@@ -133,7 +129,7 @@ export default function Modal() {
 
         <button
           className="bg-primary w-full font-semibold text-[30px] text-white h-[100px] mt-[70px] rounded-[14.24px]"
-          onClick={handleModelClose}
+          onClick={toggleModal}
         >
           Save Product Variant
         </button>
